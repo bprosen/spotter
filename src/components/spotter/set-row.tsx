@@ -7,7 +7,7 @@ import { slot } from "@/lib/features";
 import type { SetFields } from "@/lib/server-fns";
 import { formatSet } from "@/lib/training";
 import type { Settings, Workout, WorkoutExercise, WorkoutSet } from "@/lib/types";
-import { formatDuration, fromKg, fromMetres, parseDuration, toKg, toMetres } from "@/lib/units";
+import { formatDuration, fromKg, fromMeters, parseDuration, toKg, toMeters } from "@/lib/units";
 import { cn } from "@/lib/utils";
 
 type Field = "weight" | "reps" | "duration" | "distance";
@@ -18,7 +18,7 @@ function toDraft(s: Pick<WorkoutSet, "weightKg" | "reps" | "durationS" | "distan
     weight: s.weightKg == null ? "" : String(fromKg(s.weightKg, u.weightUnit)),
     reps: s.reps == null ? "" : String(s.reps),
     duration: s.durationS == null ? "" : formatDuration(s.durationS),
-    distance: s.distanceM == null ? "" : String(fromMetres(s.distanceM, u.distanceUnit)),
+    distance: s.distanceM == null ? "" : String(fromMeters(s.distanceM, u.distanceUnit)),
   };
 }
 
@@ -36,7 +36,7 @@ function parseField(field: Field, text: string, u: Settings): Partial<SetFields>
   if (!Number.isFinite(n) || n < 0) throw new Error(`${field[0].toUpperCase()}${field.slice(1)} must be a number`);
   if (field === "weight") return { weightKg: toKg(n, u.weightUnit) };
   if (field === "reps") return { reps: Math.round(n) };
-  return { distanceM: toMetres(n, u.distanceUnit) };
+  return { distanceM: toMeters(n, u.distanceUnit) };
 }
 
 const EXTRAS = slot("setRowExtras");

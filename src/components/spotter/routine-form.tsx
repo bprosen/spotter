@@ -74,7 +74,7 @@ export function RoutineForm({
         });
       }}
     >
-      <FormSection title="About" description="A name you'll recognise on the start screen.">
+      <FormSection title="About" description="A name you'll recognize on the start screen.">
         <div className="space-y-1.5">
           <Label htmlFor="r-title">Name</Label>
           <Input

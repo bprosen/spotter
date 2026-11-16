@@ -19,7 +19,7 @@ import {
   fromKg,
   parseDuration,
   toKg,
-  toMetres,
+  toMeters,
 } from "./units";
 
 let nextId = 1;
@@ -84,7 +84,7 @@ describe("units", () => {
   it("format weights, distances and volume", () => {
     expect(formatWeight(62.5, "kg")).toBe("62.5 kg");
     expect(formatWeight(toKg(225, "lb"), "lb")).toBe("225 lb");
-    expect(formatDistance(toMetres(3.1, "mi"), "mi")).toBe("3.1 mi");
+    expect(formatDistance(toMeters(3.1, "mi"), "mi")).toBe("3.1 mi");
     expect(formatVolume(12_450, "kg")).toBe("12.5 t");
     expect(formatVolume(4_250, "kg")).toBe("4,250 kg");
   });
@@ -186,7 +186,7 @@ describe("the calendar", () => {
     workout("2025-12-30", [["deadlift", [set({ weightKg: 140, reps: 5 })]]]),
   ];
 
-  it("summarise recent weeks, including empty ones", () => {
+  it("summarize recent weeks, including empty ones", () => {
     const weeks = weekSummaries(ws, { weeks: 4, on });
     expect(weeks.map((w) => [w.start, w.workouts])).toEqual([
       ["2025-12-22", 0],

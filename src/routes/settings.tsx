@@ -128,7 +128,7 @@ function SettingsPage() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="km">Kilometres (km)</SelectItem>
+                  <SelectItem value="km">Kilometers (km)</SelectItem>
                   <SelectItem value="mi">Miles (mi)</SelectItem>
                 </SelectContent>
               </Select>

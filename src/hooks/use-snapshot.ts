@@ -10,7 +10,7 @@ export function useSnapshot() {
   return root.useLoaderData();
 }
 
-/** Snapshot plus the lookups most pages need, memoised per snapshot. */
+/** Snapshot plus the lookups most pages need, memoized per snapshot. */
 export function useTraining() {
   const snapshot = useSnapshot();
   return useMemo(() => {

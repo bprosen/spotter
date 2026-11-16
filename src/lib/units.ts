@@ -1,5 +1,5 @@
 /**
- * Units and number formatting. The database always stores kilograms, metres and seconds; the user's settings
+ * Units and number formatting. The database always stores kilograms, meters and seconds; the user's settings
  * only change how values are shown and typed.
  */
 
@@ -36,12 +36,12 @@ export function toKg(value: number, unit: WeightUnit): number {
 }
 
 /** A stored distance in the user's unit. */
-export function fromMetres(m: number, unit: DistanceUnit): number {
+export function fromMeters(m: number, unit: DistanceUnit): number {
   return roundTo(unit === "km" ? m / 1000 : m / M_PER_MI, 3);
 }
 
 /** A typed distance in the user's unit, converted for storage. */
-export function toMetres(value: number, unit: DistanceUnit): number {
+export function toMeters(value: number, unit: DistanceUnit): number {
   return roundTo(unit === "km" ? value * 1000 : value * M_PER_MI, 3);
 }
 
@@ -57,7 +57,7 @@ export function formatWeight(kg: number, unit: WeightUnit): string {
 
 /** "5 km", "3.1 mi". */
 export function formatDistance(m: number, unit: DistanceUnit): string {
-  return `${formatNumber(fromMetres(m, unit), 2)} ${unit}`;
+  return `${formatNumber(fromMeters(m, unit), 2)} ${unit}`;
 }
 
 /** Large tonnage reads better rounded: "12,450 kg", "1.2 t" past 10 tonnes. */

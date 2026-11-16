@@ -221,7 +221,7 @@ describe("workouts", () => {
 });
 
 describe("routines", () => {
-  it("create, normalise and validate", async () => {
+  it("create, normalize and validate", async () => {
     const r = await ok(R.createRoutineFn(push));
     expect(r.exercises).toEqual([
       { exerciseId: "bench-press", sets: 3, reps: 5, note: null },

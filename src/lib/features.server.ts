@@ -49,7 +49,7 @@ export type ServerFeature = {
   id: string;
   /** Schema changes, applied in order after the base schema. Append new ones; never edit one that has run. */
   migrations?: FeatureMigration[];
-  /** This feature's slice of the root snapshot (`snapshot.features[id]`). Must be JSON-serialisable. */
+  /** This feature's slice of the root snapshot (`snapshot.features[id]`). Must be JSON-serializable. */
   snapshot?: (db: DatabaseSync) => unknown;
   onWorkoutChange?: (db: DatabaseSync, event: WorkoutEvent) => void;
   onRoutineChange?: (db: DatabaseSync, event: RoutineEvent) => void;

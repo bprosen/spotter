@@ -44,7 +44,7 @@ export function SectionHeading({
   );
 }
 
-/** Pending state while a route loads: a little equaliser. */
+/** Pending state while a route loads: a little equalizer. */
 export function PageSkeleton() {
   return (
     <div className="grid place-items-center gap-4 py-28" role="status" aria-label="Loading">

@@ -52,7 +52,7 @@ export function amount(v: unknown, field: string, { max = 100_000 } = {}): numbe
   return n;
 }
 
-/** An ISO-8601 timestamp, normalised to UTC ("2026-01-15T18:30:00.000Z"), or null if blank. */
+/** An ISO-8601 timestamp, normalized to UTC ("2026-01-15T18:30:00.000Z"), or null if blank. */
 export function timestamp(v: unknown, field: string): string | null {
   if (v == null || v === "") return null;
   if (typeof v !== "string" || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(v))

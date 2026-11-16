@@ -9,12 +9,12 @@ const REGION_COLOR = {
   cardio: "bg-region-cardio",
 } as const;
 
-/** The colour of a muscle's body region, as a Tailwind background class. */
+/** The color of a muscle's body region, as a Tailwind background class. */
 export function regionColor(muscle: Muscle): string {
   return REGION_COLOR[MUSCLES[muscle].region];
 }
 
-/** A small square-cornered tag naming a muscle, keyed by region colour. Optionally links to the filtered catalog. */
+/** A small square-cornered tag naming a muscle, keyed by region color. Optionally links to the filtered catalog. */
 export function MuscleChip({
   muscle,
   link = false,
