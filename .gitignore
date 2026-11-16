@@ -39,6 +39,10 @@ yarn-error.log*
 *.db-shm
 *.db-wal
 *.sqlite
+*.db-journal
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
 
 # version control metadata (keep this folder out of the project)
 .git
